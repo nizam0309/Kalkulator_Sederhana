@@ -1,99 +1,52 @@
 # Kalkulator_Sederhana
-<!DOCTYPE html>
-<html>
-<head>
-	<title>kalkulator</title>
-</head>
-<body>
-<style>
-	body{
-		font-family: Arial, sans-serif;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-			background-color: blue;
-	}
-		.calculator {
-			width: 300px;
-			background-color: red;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-		}
-		.calculator input {
-			width: 100%;
-			box-sizing: border-box;
-			height: 40px;
-			font-size: 20px;
-			text-align: right;
-			margin-bottom: 20px;
-			padding: 10px;
-			border-radius: 5px;
-		}
-		.buttons {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 8px;
-		}
-		.buttons button {
-			background-color: white;
-			font-size: 18px;
-			padding: 20px;
-			border-radius: 5px;
-		}
-		.buttons .hasil {
-			grid-column: span 3;
-		}
-</style>
-</head>
-<body>
-	<div class="calculator">
-		<input type="text" id="display">
-		<div class="buttons">
-			<button onclick="appendToDisplay('1')">1</button>
-			<button onclick="appendToDisplay('2')">2</button>
-			<button onclick="appendToDisplay('3')">3</button>
-			<button onclick="appendToDisplay('*')">x</button>
-			<button onclick="appendToDisplay('4')">4</button>
-			<button onclick="appendToDisplay('5')">5</button>
-			<button onclick="appendToDisplay('6')">6</button>
-			<button onclick="appendToDisplay('/')">/</button>
-			<button onclick="appendToDisplay('7')">7</button>
-			<button onclick="appendToDisplay('8')">8</button>
-			<button onclick="appendToDisplay('9')">9</button>
-			<button onclick="appendToDisplay('+')">+</button>
-			<button onclick="appendToDisplay('0')">0</button>
-			<button onclick="appendToDisplay('.')">.</button>
-			<button onclick="ClearDisplay	(   )">AC</button>
-			<button onclick="appendToDisplay('-')">-</button>
-			<button class="hasil" onclick="calculateResult()">=</button>
-			<button onclick="backspace()">C</button>
-		</div>
-			</body>
-		</style>
-	</div>
-</div>
-		<script>
-		function appendToDisplay(value) {
-			document.getElementById('display').value += value;
-		}
-		function ClearDisplay() {
-			document.getElementById('display').value = '';
-		}
-		function backspace() {
-			document.getElementById('display').value =display.value.slice(0, -1);
-		}
-		function calculateResult() {
-			let display = document.getElementById('display').value;
-			try {
-				let result = eval (display);
-				document.getElementById('display').value = result;
-			} catch (error) {
-				document.getElementById('display').value = 'Error Boss';
-			}
-		}
-	</script>
-</body>
-</body>
-</html>
+Kalkulator Web
+This is a simple calculator application built using HTML, CSS, and JavaScript. The calculator allows basic arithmetic operations like addition, subtraction, multiplication, and division. It includes a sleek design and supports standard operations and error handling.
+
+Features
+Addition, subtraction, multiplication, and division.
+Clear all input with the "AC" button.
+Backspace functionality to remove the last digit entered.
+Real-time result calculation using the "=" button.
+Error handling when an invalid expression is entered.
+Clean and responsive design.
+File Structure
+index.html: The main HTML file containing the structure and layout of the calculator.
+style: Internal CSS styling used to format the calculator’s appearance.
+script: Internal JavaScript used to handle the logic for the calculator.
+How It Works
+HTML:
+
+The layout consists of a main div container (calculator) that holds the input display and buttons.
+Buttons for digits (0-9), operators (+, -, *, /), and other functionality like clear (AC) and backspace (C).
+The equal (=) button is used to calculate the result.
+CSS:
+
+The styling is centered around a clean and modern design. The calculator has a red background with rounded corners, shadow effects, and white buttons.
+Flexbox and Grid are used to ensure a responsive layout, aligning the elements efficiently on different screen sizes.
+JavaScript:
+
+appendToDisplay(value): Appends the clicked button value to the display.
+ClearDisplay(): Clears the input display.
+backspace(): Removes the last character from the input display.
+calculateResult(): Uses eval() to calculate the expression and display the result. If the expression is invalid, an error message is shown.
+How to Use
+Open the index.html file in any modern web browser (e.g., Chrome, Firefox, etc.).
+Use the number buttons (0-9) and operators (+, -, *, /) to input an expression.
+Press the "=" button to calculate the result.
+Press "AC" to clear the display.
+Press "C" to delete the last entered character.
+The result will be displayed in the input box.
+Example
+Simple Calculation:
+Input: 3 + 5
+Press "="
+Output: 8
+Invalid Input:
+Input: 3 +
+Press "="
+Output: Error Boss
+Notes
+The eval() function is used to evaluate the expression. It is generally safe for basic arithmetic but should be used carefully in production environments to avoid security risks.
+The calculator does not support complex expressions like parentheses or advanced mathematical functions. It's a simple, straightforward calculator.
+License
+This project is open source and available under the MIT License.
